@@ -9,6 +9,8 @@
     height: 500px;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 .flex{
     display: flex;
@@ -17,5 +19,11 @@
     width: 30px;
     height: 30px;
     background-color: aliceblue ;
-    color: aliceblue;
+    
+}
+/* .rowElement:hover{
+    background-color: black;
+} */
+.black{
+    background-color: black;
 }

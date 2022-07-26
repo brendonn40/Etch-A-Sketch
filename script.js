@@ -1,6 +1,7 @@
 const container = document.getElementsByClassName("container")
-console.log(container)
 
+const rows = document.getElementsByClassName("rowElement")
+console.log(rows)
 const GRID_SIZE = 16
 
 for (let i = 0; i < GRID_SIZE; i++) {
@@ -13,4 +14,17 @@ for (let i = 0; i < GRID_SIZE; i++) {
         row.appendChild(rowElement)
     }
 
+}
+
+Array.from(rows).forEach((rowItem) => {
+    console.log(rowItem)
+    rowItem.addEventListener("mouseover",function(e){
+        e.stopPropagation()
+        addColor(rowItem)
+    })
+});
+
+
+function addColor(rowItem){
+    rowItem.classList.add("black")
 }
