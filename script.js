@@ -9,6 +9,7 @@ let GRID_SIZE = 16
 // cria o grid
 createGrid(GRID_SIZE)
 changeElementSize(GRID_SIZE)
+createEventListener()
 
 
 buttons[1].addEventListener("click",resetGrid)
@@ -26,12 +27,14 @@ function createGrid(GRID_SIZE){
     }
 }
 // cria um event listener pra cada elemento do grid
-Array.from(rows).forEach((rowItem) => {
-    rowItem.addEventListener("mouseover",function(e){
-        e.stopPropagation()
-        addColor(rowItem)
+function createEventListener(){
+    Array.from(rows).forEach((rowItem) => {
+        rowItem.addEventListener("mouseover",function(e){
+            e.stopPropagation()
+            addColor(rowItem)
+        })
     })
-});
+}
 // muda o tamanho dos elementos do grid
 function changeElementSize(GRID_SIZE){
     let newSize = calcElementWidth(GRID_SIZE)
@@ -61,15 +64,12 @@ function resetGrid(){
 function clearContent(elementID) {
     document.getElementById(elementID).innerHTML = "";
 }
-// function clearGrid(){
-//     let elements = document.lementsByCgetElassName("flex")
-//     for (const element of elements) {
-//         container.removeChild(element)
-//     }
+
 
 function promptUser(){
     let GRID_SIZE = window.prompt("What size do u want the grid? 1 to 100 ")
     clearContent("grid")
     createGrid(GRID_SIZE)
     changeElementSize(GRID_SIZE)
+    createEventListener()
 }
