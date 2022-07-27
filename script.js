@@ -1,15 +1,18 @@
 const container = document.getElementsByClassName("container")
 const rows = document.getElementsByClassName("rowElement")
 const buttons = document.querySelectorAll("button")
-console.log(buttons)
+
+
+console.log(container)
 
 let GRID_SIZE = 16
 // cria o grid
-createGrid(100)
-changeElementSize(100)
+createGrid(GRID_SIZE)
+changeElementSize(GRID_SIZE)
 
 
 buttons[1].addEventListener("click",resetGrid)
+buttons[0].addEventListener("click",promptUser)
 function createGrid(GRID_SIZE){
     for (let i = 0; i < GRID_SIZE; i++) {
         let row = document.createElement("div")
@@ -53,4 +56,20 @@ function resetGrid(){
             }
         } 
     }
+}
+
+function clearContent(elementID) {
+    document.getElementById(elementID).innerHTML = "";
+}
+// function clearGrid(){
+//     let elements = document.lementsByCgetElassName("flex")
+//     for (const element of elements) {
+//         container.removeChild(element)
+//     }
+
+function promptUser(){
+    let GRID_SIZE = window.prompt("What size do u want the grid? 1 to 100 ")
+    clearContent("grid")
+    createGrid(GRID_SIZE)
+    changeElementSize(GRID_SIZE)
 }
