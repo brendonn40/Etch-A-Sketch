@@ -8,7 +8,6 @@
     
 }
 .container{
-    background-color: blue;
     width:480px;
     height: auto;
     display: flex;
@@ -28,4 +27,16 @@
 
 .black{
     background-color: black;
+}
+h1{
+    text-align: center;
+    margin-bottom: 50px;
+}
+.box{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+body{
+    background-color: aqua;
 }
